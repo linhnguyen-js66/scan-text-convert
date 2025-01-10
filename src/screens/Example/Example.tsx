@@ -8,51 +8,29 @@ import { useI18n, useUser } from '@/hooks';
 import { AssetByVariant, IconByVariant, Skeleton } from '@/components/atoms';
 import { SafeScreen } from '@/components/templates';
 
+import { useHome } from './useHome';
+
 function Example() {
   const { t } = useTranslation();
-  const { useFetchOneQuery } = useUser();
-  const { toggleLanguage } = useI18n();
 
   const {
     backgrounds,
-    changeTheme,
     colors,
     components,
     fonts,
     gutters,
     layout,
-    variant,
+    borders,
   } = useTheme();
-
-  const [currentId, setCurrentId] = useState(-1);
-
-  const fetchOneUserQuery = useFetchOneQuery(currentId);
-
-  useEffect(() => {
-    if (fetchOneUserQuery.isSuccess) {
-      Alert.alert(
-        t('screen_example.hello_user', { name: fetchOneUserQuery.data.name }),
-      );
-    }
-  }, [fetchOneUserQuery.isSuccess, fetchOneUserQuery.data, t]);
-
-  const onChangeTheme = () => {
-    changeTheme(variant === 'default' ? 'dark' : 'default');
-  };
+  const { dataBtn, fetchOneUserQuery, onChangeTheme } = useHome();
 
   return (
     <SafeScreen
       isError={fetchOneUserQuery.isError}
       onResetError={fetchOneUserQuery.refetch}
     >
-      <ScrollView>
-        <View
-          style={[
-            layout.justifyCenter,
-            layout.itemsCenter,
-            gutters.marginTop_80,
-          ]}
-        >
+      <ScrollView style={[layout.flex_1]}>
+        <View style={[layout.justifyCenter, layout.itemsCenter, layout.flex_1]}>
           <View
             style={[layout.relative, backgrounds.gray100, components.circle250]}
           />
@@ -66,56 +44,38 @@ function Example() {
           </View>
         </View>
 
-        <View style={[gutters.paddingHorizontal_32, gutters.marginTop_40]}>
-          <View style={[gutters.marginTop_40]}>
-            <Text style={[fonts.size_40, fonts.gray800, fonts.bold]}>
-              {t('screen_example.title')}
-            </Text>
-            <Text
-              style={[fonts.size_16, fonts.gray200, gutters.marginBottom_40]}
-            >
-              {t('screen_example.description')}
+        <View
+          style={[
+            gutters.paddingHorizontal_32,
+            gutters.marginTop_40,
+            layout.flex_1,
+          ]}
+        >
+          <View style={[gutters.marginTop_40, layout.flex_1]}>
+            <Text style={[fonts.size_16, fonts.gray800, fonts.bold]}>
+              {t('screen_example.xinchao')}
             </Text>
           </View>
-
-          <View
-            style={[
-              layout.row,
-              layout.justifyBetween,
-              layout.fullWidth,
-              gutters.marginTop_16,
-            ]}
-          >
-            <Skeleton
-              height={64}
-              loading={fetchOneUserQuery.isLoading}
-              style={{ borderRadius: components.buttonCircle.borderRadius }}
-              width={64}
-            >
+          <View style={[gutters.marginTop_16]}>
+            {dataBtn.map((item, index) => (
               <TouchableOpacity
-                onPress={() => setCurrentId(Math.ceil(Math.random() * 9 + 1))}
-                style={[components.buttonCircle, gutters.marginBottom_16]}
-                testID="fetch-user-button"
+                key={index}
+                onPress={item?.onPress}
+                style={[
+                  layout.flex_1,
+                  backgrounds.purple100,
+                  gutters.padding_16,
+                  dataBtn?.length - 1 != index && gutters.marginBottom_16,
+                  { borderRadius: 16 },
+                  layout.row,
+                  layout.itemsCenter,
+                ]}
+                testID="change-theme-button"
               >
-                <IconByVariant path={'send'} stroke={colors.purple500} />
+                <IconByVariant path={item?.icon} stroke={colors.purple500} />
+                <Text style={[fonts.size_16, fonts.purple500, gutters.marginLeft_16]}>{item?.title}</Text>
               </TouchableOpacity>
-            </Skeleton>
-
-            <TouchableOpacity
-              onPress={onChangeTheme}
-              style={[components.buttonCircle, gutters.marginBottom_16]}
-              testID="change-theme-button"
-            >
-              <IconByVariant path={'theme'} stroke={colors.purple500} />
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={toggleLanguage}
-              style={[components.buttonCircle, gutters.marginBottom_16]}
-              testID="change-language-button"
-            >
-              <IconByVariant path={'language'} stroke={colors.purple500} />
-            </TouchableOpacity>
+            ))}
           </View>
         </View>
       </ScrollView>

@@ -14,7 +14,7 @@ import { SafeScreen } from '@/components/templates';
 function Startup({ navigation }: RootScreenProps<Paths.Startup>) {
   const { fonts, gutters, layout } = useTheme();
   const { t } = useTranslation();
-
+  
   const { isError, isFetching, isSuccess } = useQuery({
     queryFn: () => {
       return Promise.resolve(true);

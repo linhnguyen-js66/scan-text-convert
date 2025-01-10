@@ -6,21 +6,21 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import en from './en-EN.json';
-import fr from './fr-FR.json';
+import vi from './vi-VI.json';
 
 export const defaultNS = 'scancoverttext' as const;
 
 export const resources = {
   'en-EN': en,
-  'fr-FR': fr,
+  'vi-VI': vi,
 } as const satisfies Record<Language, unknown>;
 
 i18n
   .use(initReactI18next)
   .init({
     defaultNS,
-    fallbackLng: 'fr-FR',
-    lng: 'fr-FR',
+    fallbackLng: 'vi-VI',
+    lng: 'vi-VI',
     resources,
   })
   .then(() => {

@@ -1,0 +1,19 @@
+{
+  "scancoverttext": {
+    "common_appName": {
+      "full": "Phản ứng gốc scanCovertText",
+      "tên viết tắt": "RNB"
+    },
+    "common_error": "Rất tiếc! Đã xảy ra lỗi.",
+    "screen_example": {
+      "xinchao": "Chào mừng bạn đến với Ứng Dụng",
+      "scan":"Quét tài liệu",
+      "file":"Lưu trữ tài liệu"
+    },
+    "error_boundary": {
+      "title": "Rất tiếc! Đã xảy ra lỗi.",
+      "description": "Chúng tôi xin lỗi vì sự bất tiện này. Vui lòng thử lại sau.",
+      "cta": "Tải lại màn hình"
+    }
+  }
+}
