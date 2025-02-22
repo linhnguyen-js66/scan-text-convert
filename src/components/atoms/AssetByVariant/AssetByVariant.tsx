@@ -6,10 +6,12 @@ import { z } from 'zod';
 
 import { useTheme } from '@/theme';
 import getAssetsContext from '@/theme/assets/getAssetsContext';
-
+type imageUri = {
+  uri: string
+}
 type Props = {
   extension?: string;
-  path: string;
+  path: imageUri | string;
 } & Omit<ImageProps, 'source'>;
 
 const images = getAssetsContext('images');

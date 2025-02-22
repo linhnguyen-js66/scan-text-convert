@@ -1,4 +1,4 @@
-import type { ViewStyle } from 'react-native';
+import { Dimensions, type ViewStyle } from 'react-native';
 
 export default {
   col: {
@@ -40,6 +40,9 @@ export default {
   rowReverse: {
     flexDirection: 'row-reverse',
   },
+  selfCenter: {
+    alignSelf: 'center',
+  },
   wrap: {
     flexWrap: 'wrap',
   },
@@ -48,10 +51,10 @@ export default {
     flex: 1,
   },
   fullHeight: {
-    height: '100%',
+    height: Dimensions.get("window").height,
   },
   fullWidth: {
-    width: '100%',
+    width: Dimensions.get("window").width,
   },
   /* Positions */
   absolute: {
@@ -62,6 +65,9 @@ export default {
   },
   left0: {
     left: 0,
+  },
+  primary_size: {
+    height: 46
   },
   relative: {
     position: 'relative',
@@ -77,5 +83,5 @@ export default {
   },
   z10: {
     zIndex: 10,
-  },
+  }
 } as const satisfies Record<string, ViewStyle>;

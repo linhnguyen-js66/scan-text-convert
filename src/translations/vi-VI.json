@@ -14,6 +14,35 @@
       "title": "Rất tiếc! Đã xảy ra lỗi.",
       "description": "Chúng tôi xin lỗi vì sự bất tiện này. Vui lòng thử lại sau.",
       "cta": "Tải lại màn hình"
+    },
+    "text":{
+      "scan_title":"Quét Mọi Nơi",
+      "scan_des":"Quét tài liệu mọi lúc, mọi nơi – ngay từ túi của bạn!",
+      "scan_second":"Quét Nhanh Chóng",
+      "scan_second_des":"Biến điện thoại của bạn thành máy quét di động, giúp bạn lưu trữ tài liệu chỉ trong vài giây.",
+      "scan_third":"Chia Sẻ Dễ Dàng",
+      "scan_third_des":"Xuất tài liệu dưới nhiều định dạng và chia sẻ ngay lập tức qua email, tin nhắn hoặc đám mây.",
+      "next":"Tiếp",
+      "no_data":"Bạn chưa có tài liệu nào",
+      "no_data_des":"Đồng bộ tài liệu trên điện thoại, máy tính bảng và máy tính",
+      "recent":"Gần đây",
+      "documents":"Tài liệu",
+      "today":"Hôm nay",
+      "page":"trang",
+      "pages":"trang",
+      "rename":"Đổi tên",
+      "delete":"Xoá",
+      "rename_document":"Đổi tên bản ghi",
+      "camera":"Máy ảnh",
+      "gallery":"Thư viện",
+      "allow":"Cho phép chỉnh sửa ảnh trong thư viện",
+      "start_camera":"Mở camera khi khởi động",
+      "confirm_on":"Xác nhận khi vuốt để xoá",
+      "show_walkthrough":"Hiển thị hướng dẫn khi khởi chạy",
+      "privacy":"Chính sách quyền riêng tư",
+      "term":"Điều khoản & điều kiện",
+      "scan":"Quét",
+      "convert":"Chuyển đổi"
     }
   }
 }

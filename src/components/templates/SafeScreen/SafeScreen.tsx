@@ -11,12 +11,14 @@ import { ErrorBoundary } from '@/components/organisms';
 
 type Props = PropsWithChildren<
   {
+    backgroundColor?: string;
     isError?: boolean;
     onResetError?: () => void;
   } & Omit<SafeAreaViewProps, 'mode'>
 >;
 
 function SafeScreen({
+  backgroundColor = '#fff',
   children = undefined,
   isError = false,
   onResetError = undefined,
@@ -26,7 +28,7 @@ function SafeScreen({
   const { layout, navigationTheme, variant } = useTheme();
 
   return (
-    <SafeAreaView {...props} mode="padding" style={[layout.flex_1, style]}>
+    <SafeAreaView {...props} mode="padding" style={[layout.flex_1, style, {backgroundColor}]}>
       <StatusBar
         backgroundColor={navigationTheme.colors.background}
         barStyle={variant === 'dark' ? 'light-content' : 'dark-content'}

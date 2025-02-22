@@ -18,6 +18,7 @@ export type Theme = {
   layout: typeof layout;
   navigationTheme: NavigationTheme;
   variant: Variant;
+  //space: 
 };
 
 export type ComponentTheme = Omit<Theme, 'components' | 'navigationTheme'>;

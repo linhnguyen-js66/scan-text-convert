@@ -14,6 +14,35 @@
       "title": "Oops! Something went wrong.",
       "description": "We are sorry for the inconvenience. Please try again later.",
       "cta": "Reload the screen"
+    },
+    "text":{
+      "scan_title":"Scan Anywhere",
+      "scan_des":"Scan documents anytime, anywhere – right from your pocket!",
+      "scan_second":"Quick Scan",
+      "scan_second_des":"Turn your phone into a portable scanner, helping you store documents in just a few seconds.",
+      "scan_third":"Easy Sharing",
+      "scan_third_des":"Export documents in multiple formats and share instantly via email, messenger or the cloud.",
+      "next":"Next",
+      "no_data":"You don’t have any documents",
+      "no_data_des":"Sync docs accross smartphones, tablets, and computers",
+      "recent":"Recent",
+      "documents":"Document",
+      "today":"Today",
+      "page":"page",
+      "pages":"pages",
+      "rename":"Rename",
+      "delete":"Delete",
+      "rename_document":"Rename Document",
+      "camera":"Camera",
+      "gallery":"Gallery",
+      "allow":"Allow gallery photo editing",
+      "start_camera":"Start camera at start up",
+      "confirm_on":"Confirm on swipe delete",
+      "show_walkthrough":"Show walkthrough at launch",
+      "privacy":"Privacy Policy",
+      "term":"Terms & Conditions",
+      "scan":"Scan",
+      "convert":"Convert"
     }
   }
 }
